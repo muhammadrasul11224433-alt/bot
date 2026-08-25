@@ -1,0 +1,14 @@
+services:
+  bot:
+    build: .
+    container_name: muzika-bot
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./downloads:/app/downloads
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

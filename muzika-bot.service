@@ -1,0 +1,18 @@
+[Unit]
+Description=Muzika Telegram bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=bot
+Group=bot
+WorkingDirectory=/opt/muzika-bot
+EnvironmentFile=/opt/muzika-bot/.env
+ExecStart=/opt/muzika-bot/.venv/bin/python -u /opt/muzika-bot/bot.py
+Restart=always
+RestartSec=5
+TimeoutStopSec=20
+
+[Install]
+WantedBy=multi-user.target

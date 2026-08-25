@@ -1,0 +1,13 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+downloads/
+temp/
+file_ids.json
+*.mp3
+*.mp4
+*.webm
+*.m4a
+*.ogg

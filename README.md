@@ -46,12 +46,14 @@ Windows’da `run.bat` ni ikki marta bosish ham yetarli.
 
 ## Serverga qo‘yish
 
-Ubuntu/Debian VPS, Docker va boshqa usullar `SERVER.md` da batafsil yozilgan.
-Eng qisqa yo‘l:
+Railway, Render, Fly.io, VPS va Docker usullari `DEPLOY.md` da yozilgan.
+Eng oson yo‘l — Railway: GitHub repozitoriyni ulab, `BOT_TOKEN` ni qo‘shish.
+
+VPS uchun bitta buyruq:
 
 ```bash
-cp .env.example .env && nano .env
-sudo bash install.sh
+curl -fsSL https://raw.githubusercontent.com/muhammadrasul11224433-alt/bot/main/deploy.sh \
+  | sudo bash -s YOUR_TOKEN
 ```
 
 ## Fayllar

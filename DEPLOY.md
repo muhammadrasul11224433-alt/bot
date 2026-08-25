@@ -36,7 +36,43 @@ VPS qayerdan olish: Hetzner, Contabo, Aeza, PS.kz, Timeweb (eng arzon tarif ham 
 
 ---
 
-## 2) Render.com — brauzerdan, kartasiz boshlash
+## 2) Railway — brauzerdan, eng oson
+
+Repozitoriyda `railway.json` bor, Railway `Dockerfile` bilan o‘zi yig‘adi.
+
+1. [railway.com](https://railway.com) ga GitHub bilan kiring
+2. **New Project → Deploy from GitHub repo** → `muhammadrasul11224433-alt/bot`
+3. Loyiha ochilgach **Variables** bo‘limiga o‘tib qo‘shing:
+   - nomi: `BOT_TOKEN`
+   - qiymati: BotFather bergan token
+4. **Deploy** bosing. Logda `Run polling for bot` chiqsa — bot ishlayapti.
+
+Muhim: Railway’da **Public Networking / port kerak emas** — bot polling
+usulida ishlaydi, tashqi port ochilmaydi. Agar Railway port so‘rasa,
+e’tibor bermang.
+
+CLI orqali xohlasangiz:
+
+```bash
+npm i -g @railway/cli
+railway login
+railway init
+railway variables --set "BOT_TOKEN=1234567890:AA..."
+railway up
+```
+
+Eslatma: Railway’da bepul kredit tugagach xizmat to‘xtaydi, oyiga ~5$ tarif kifoya.
+
+### Nega Vercel va Neon bo‘lmaydi
+
+- **Vercel** — faqat qisqa (serverless) funksiyalar uchun. Telegram boti doim
+  ishlab turishi kerak, ffmpeg ham kerak. Vercel’da bunday bot ishlamaydi.
+- **Neon** — bu PostgreSQL ma’lumotlar bazasi xizmati, bot ishga tushiradigan
+  joy emas. Bizning botga baza ham kerak emas.
+
+---
+
+## 3) Render.com — brauzerdan, kartasiz boshlash
 
 1. [render.com](https://render.com) ga GitHub bilan kiring
 2. **New → Blueprint**, repozitoriyni tanlang: `muhammadrasul11224433-alt/bot`
@@ -47,7 +83,7 @@ Bepul tarifda worker uzoq ishlamaydi, shuning uchun `starter` tarif tanlangan.
 
 ---
 
-## 3) Fly.io
+## 4) Fly.io
 
 ```bash
 fly auth login
@@ -59,7 +95,7 @@ fly deploy
 
 ---
 
-## 4) Docker (har qanday serverda)
+## 5) Docker (har qanday serverda)
 
 ```bash
 git clone https://github.com/muhammadrasul11224433-alt/bot.git && cd bot

@@ -1,0 +1,16 @@
+app = "navo-orbit-bot"
+primary_region = "fra"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[processes]
+  app = "python -u bot.py"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "512mb"
+
+[mounts]
+  source = "navo_downloads"
+  destination = "/app/downloads"

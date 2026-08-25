@@ -1,0 +1,10 @@
+services:
+  - type: worker
+    name: navo-orbit-bot
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter
+    autoDeploy: true
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
